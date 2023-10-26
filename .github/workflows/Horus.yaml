@@ -19,7 +19,11 @@ jobs:
         run:  horusec start -p="./" --return-error -e="false"
 
       -name: "Location"
-        run: pwd&&ls -la
+        run: "pwd"
+      
+      -name: "Files"
+        run: "ls -la"
 
       - name: "Imagen Docker"
-        run: "sudo docker build -t prueba:latest /" 
+        run: "sudo docker build -t prueba:latest /"
+        
