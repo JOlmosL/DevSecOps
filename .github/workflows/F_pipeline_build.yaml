@@ -42,4 +42,7 @@ jobs:
 
       - name: "Verificar reporte"
         run: ls -ltra reports
+
+      - name: "Imagen Docker"
+        run: "docker build -t prueba:latest ./"
                                   

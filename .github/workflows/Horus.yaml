@@ -17,10 +17,3 @@ jobs:
 
       - name: "Iniciar Horus"
         run:  horusec start -p="./" --return-error -e="false"
-
-      - name: "Adding x permissions"
-        run: "chmod +x Dockerfile"
-
-      - name: "Imagen Docker"
-        run: "docker build -f Dockerfile . -t webgoat/webgoat"
-
