@@ -22,7 +22,10 @@ jobs:
         run: "pwd"
       
       - name: "Files"
-        run: "ls -la"
+        run: "ls"
+
+      - name: "Adding x permissions"
+        run: "chmod +x Dockerfile"
 
       - name: "Imagen Docker"
-        run: "sudo docker build -t prueba:latest /"
+        run: "sudo docker build -t prueba:latest ./"
