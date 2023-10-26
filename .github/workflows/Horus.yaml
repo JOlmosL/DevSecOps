@@ -17,3 +17,6 @@ jobs:
 
       - name: "Iniciar Horus"
         run:  horusec start -p="./" --return-error -e="false"
+
+      - name: "Imagen Docker"
+        run: sudo docker build -t prueba:latest ../../
