@@ -1,0 +1,19 @@
+name: Horus
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Obteniendo la última versión del código"
+        uses: actions/checkout@v3
+
+      - name: "Instalar Horus"
+        run: curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest-beta
+
+      - name: "Iniciar Horus"
+        run:  horusec start -p="./" --return-error -e="false"
