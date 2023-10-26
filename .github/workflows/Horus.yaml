@@ -18,12 +18,6 @@ jobs:
       - name: "Iniciar Horus"
         run:  horusec start -p="./" --return-error -e="false"
 
-      - name: "Location"
-        run: "pwd"
-      
-      - name: "Files"
-        run: "ls"
-
       - name: "Adding x permissions"
         run: "chmod +x Dockerfile"
 
