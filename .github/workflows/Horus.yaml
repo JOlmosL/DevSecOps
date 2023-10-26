@@ -22,4 +22,5 @@ jobs:
         run: "chmod +x Dockerfile"
 
       - name: "Imagen Docker"
-        run: "sudo docker build -t prueba:latest ./"
+        run: "docker build -f Dockerfile . -t webgoat/webgoat"
+
