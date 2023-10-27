@@ -43,7 +43,7 @@ jobs:
       - name: "Verificar reporte"
         run: ls -ltra reports
 
-      - name: "Generación de imágen"
+      - name: "Construyendo imagen"
         run: |
           docker build -f Dockerfile . -t webgoat:latest
           docker images
