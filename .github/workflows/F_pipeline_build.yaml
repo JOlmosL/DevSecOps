@@ -48,6 +48,7 @@ jobs:
           docker build -f Dockerfile . -t webgoat:latest
           docker images
 
+          
       - name: "Run Trivy vulnerability scanner"
           uses: aquasecurity/trivy-action@master
           with:
