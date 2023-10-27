@@ -55,6 +55,6 @@ jobs:
           echo $CONT_ID
 
       
-      -name: "Run "
+      - name: "Run "
         run: docker start $CONT_ID
                                   
