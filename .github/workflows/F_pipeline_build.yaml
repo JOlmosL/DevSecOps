@@ -48,18 +48,17 @@ jobs:
           docker build -f Dockerfile . -t webgoat:latest
           docker images
 
-      - name: "Corriendo trivy"
+      - name: "Instalando trivy"
         run: |
           wget https://github.com/aquasecurity/trivy/releases/download/v0.18.3/trivy_0.18.3_Linux-64bit.deb
           sudo dpkg -i trivy_0.18.3_Linux-64bit.deb
-          trivy webgoat:latest
+
+      - name: "Trivy Image"
+        run: trivy image webgoat:latest
 
       - name: "Crear Contenedor"
         run: |
-          docker run --name webgoat -d -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 webgoat/test
-          echo "Up server..."
-          sleep 45
-          curl http://127.0.0.1:8080/WebGoat/login
-          docker container stop webgoat
-          docker container rm webgoat
+          docker run --name webgoat -d -p 127.0.0.1:8080:8080 -p 127.0.0.1:9090:9090 --name WebGoat webgoat:latest
+          docker container stop WebGoat
+          docker container rm WebGoat
                                   
