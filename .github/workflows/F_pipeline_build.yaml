@@ -46,7 +46,8 @@ jobs:
       - name: "Imagen Docker"
         run: |
           docker build -f Dockerfile . -t webgoat:latest
-          docker containers
+          docker ps -a
+
       - name: "Run Container"
         run: docker run --name webgoat:latest
                                   
