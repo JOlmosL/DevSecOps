@@ -49,5 +49,12 @@ jobs:
           docker images
 
       - name: "Run Container"
-        run: docker run -d webgoat:latest
+        run: |
+          CONT_ID=$(docker run -d webgoat:latest)
+          docker ps -a
+          echo $CONT_ID
+
+      
+      -name: "Run "
+        run: docker start $CONT_ID
                                   
