@@ -50,11 +50,9 @@ jobs:
 
       - name: "Run Container"
         run: |
-          CONT_ID=$(docker run -d webgoat:latest)
+          docker run -p 8080:80 -d --name WebGoat webgoat:latest
           docker ps -a
-          echo $CONT_ID
 
-      
-      - name: "Run "
-        run: docker start $CONT_ID
+      - name: "Starting Container"
+        run: docker start WebGoat
                                   
